@@ -1,25 +1,29 @@
+import fs from 'fs';
+import path from 'path';
 import { ConfigPlugin, createRunOncePlugin } from '@expo/config-plugins';
 import { GigyaPluginProps } from './types';
 
 import { withMainApplicationSetup } from './android/withMainApplicationSetup';
+import { withAppDelegateSetup } from './ios/withAppDelegateSetup';
+import { withGigyaExtensionFile } from './ios/withGigyaExtensionFile';
 
-const pkg = require('@allboatsrise/expo-gigya/package.json');
-
-const ERROR_PREFIX = 'Gigya Plugin:';
-
+/**
+ * Plugin based on integration instructions for @sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud package
+ * @see https://github.com/SAP/gigya-react-native-plugin-for-sap-customer-data-cloud/blob/329c26c063b4c69342e522904e8326b814a9d7cd/README.md#setup--gigya-core-integration
+ * @param config 
+ * @param props 
+ * @returns 
+ */
 const withGigya: ConfigPlugin<Partial<GigyaPluginProps> | undefined> = (config, props) => {
-  if (!props) {
-    throw new Error(`${ERROR_PREFIX} Must configure plugin options.`);
-  }
+  // android
+  config = withMainApplicationSetup(config, props);
 
-  const {apiKey, apiDomain = 'us1.gigya.com'} = props;
-
-  if (!apiKey) {
-    throw new Error(`${ERROR_PREFIX} Must specify apiKey property.`);
-  }
-
-  config = withMainApplicationSetup(config, {...props, apiKey, apiDomain});
+  // ios
+  config = withAppDelegateSetup(config, props);
+  config = withGigyaExtensionFile(config, {file: path.join(path.dirname(__dirname), 'assets', 'GigyaExtension.swift')});
+  
   return config;
 };
 
+const pkg = JSON.parse(fs.readFileSync(path.join(path.dirname(path.dirname(__dirname)), 'package.json'), 'utf8'));
 export default createRunOncePlugin(withGigya, pkg.name, pkg.version);
