@@ -14,9 +14,13 @@ yarn add @allboatsrise/expo-gigya @sap_oss/gigya-react-native-plugin-for-sap-cus
 Add plugin to `app.json`/`app.plugin.js`:
 
 ```json
-...
-  plugins: [
-    "@allboatsrise/expo-gigya"
-  ],
-...
+{
+  "expo": {
+    // ...
+    "plugins": [
+      "@allboatsrise/expo-gigya"
+    ],
+    // ...
+  }
+}
 ```
