@@ -16,11 +16,9 @@ Add plugin to `app.json`/`app.plugin.js`:
 ```json
 {
   "expo": {
-    // ...
     "plugins": [
       "@allboatsrise/expo-gigya"
     ],
-    // ...
   }
 }
 ```
