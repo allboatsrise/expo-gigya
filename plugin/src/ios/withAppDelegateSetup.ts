@@ -2,6 +2,7 @@ import {
   ConfigPlugin,
   withAppDelegate,
 } from "@expo/config-plugins";
+import { getProjectName } from "@expo/config-plugins/build/ios/utils/Xcodeproj";
 import { mergeContents } from "@expo/config-plugins/build/utils/generateCode";
 import { GigyaPluginProps } from '../types';
 
@@ -9,7 +10,7 @@ export const withAppDelegateSetup: ConfigPlugin<GigyaPluginProps | undefined> = 
   return withAppDelegate(config, async config => {
     config.modResults.contents = mergeContents({
       src: config.modResults.contents,
-      newSrc: `#import "${config.slug}-Swift.h"`,
+      newSrc: `#import "${getProjectName(config.modRequest.projectRoot)}-Swift.h"`,
       anchor: /#import "AppDelegate\.h"/,
       offset: 1,
       tag: '@allboatsrise/expo-gigya(header)',
