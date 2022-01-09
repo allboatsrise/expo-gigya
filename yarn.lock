@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@allboatsrise/gigya-react-native-plugin-for-sap-customer-data-cloud@~0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@allboatsrise/gigya-react-native-plugin-for-sap-customer-data-cloud/-/gigya-react-native-plugin-for-sap-customer-data-cloud-0.0.7.tgz#40beeeb20ed777dbdd0cf890aed0834b4768fecb"
+  integrity sha512-g13Vkz7R0zpMuzXH+PTbiMt6fxRvCecX2ST+ZnvTfnCj2X7Rg5O+ocz05xffXKKYGgzfTiMVcM7Ve5PrZurjWw==
+
 "@babel/cli@^7.1.2":
   version "7.16.0"
   resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.16.0.tgz#a729b7a48eb80b49f48a339529fc4129fd7bcef3"
@@ -2011,11 +2016,6 @@
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@react-native/normalize-color/-/normalize-color-2.0.0.tgz#da955909432474a9a0fe1cbffc66576a0447f567"
   integrity sha512-Wip/xsc5lw8vsBlmY2MO/gFLp3MvuZ2baBZjDeTjjndMgM0h5sxz7AZR62RDPGgstp8Np7JzjvVqVT7tpFZqsw==
-
-"@sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud@~0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud/-/gigya-react-native-plugin-for-sap-customer-data-cloud-0.0.5.tgz#c4aa4050469e95d931630483cc1118a7a771a253"
-  integrity sha512-EevK31l/vpxcm/6RXrM1ODwWz7AIKI9K12Bngco8FYKAEXrI81zJrXNh/pmcp1yjhZQBt8J21D4XWKzbX3GSPQ==
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.3"
