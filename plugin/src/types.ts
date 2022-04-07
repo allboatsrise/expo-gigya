@@ -1,1 +1,4 @@
-export type GigyaPluginProps = {};
+export type GigyaPluginProps = {
+  gigyaAndroidSdkVersion?: string
+  gigyaSwiftSdkVersion?: string
+};

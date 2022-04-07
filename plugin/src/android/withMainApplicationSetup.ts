@@ -3,9 +3,8 @@ import {
   ConfigPlugin,
 } from "@expo/config-plugins";
 import { mergeContents } from "@expo/config-plugins/build/utils/generateCode";
-import { GigyaPluginProps } from '../types';
 
-export const withMainApplicationSetup: ConfigPlugin<GigyaPluginProps | undefined> = (config) => {
+export const withMainApplicationSetup: ConfigPlugin = (config) => {
   return withMainApplication(config, async config => {
 
     config.modResults.contents = mergeContents({
