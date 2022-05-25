@@ -9,7 +9,7 @@ export const withAppDelegateSetup: ConfigPlugin = (config) => {
   return withAppDelegate(config, async config => {
     config.modResults.contents = mergeContents({
       src: config.modResults.contents,
-      newSrc: `#import "${getProjectName(config.modRequest.projectRoot)}-Swift.h"`,
+      newSrc: `#import <ExpoModulesCore-Swift.h>\n#import "${getProjectName(config.modRequest.projectRoot)}-Swift.h"`,
       anchor: /#import "AppDelegate\.h"/,
       offset: 1,
       tag: '@allboatsrise/expo-gigya(header)',
