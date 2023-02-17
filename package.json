@@ -40,14 +40,19 @@
     "preset": "expo-module-scripts"
   },
   "dependencies": {
-    "@expo/config-plugins": "^4.0.2"
   },
   "devDependencies": {
-    "expo-module-scripts": "^2.0.0",
-    "@allboatsrise/gigya-react-native-plugin-for-sap-customer-data-cloud": "~0.0.7"
+    "expo": "^47.0.0",
+    "expo-module-scripts": "^3.0.4",
+    "@sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud": "^0.2.0"
   },
   "peerDependencies": {
-    "expo": "*",
-    "@allboatsrise/gigya-react-native-plugin-for-sap-customer-data-cloud": "~0.0.7"
+    "expo": ">=47.0.0",
+    "@sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud": ">=0.2.0"
+  },
+  "peerDependenciesMeta": {
+    "expo": {
+      "optional": true
+    }
   }
 }
