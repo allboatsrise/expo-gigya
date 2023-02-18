@@ -11,7 +11,7 @@ import gigya_react_native_plugin_for_sap_customer_data_cloud
 import Gigya
 
 @objc public class GigyaExtension: NSObject {
-  @objc func setMySchema() {
+  @objc public func setMySchema() {
     GigyaSdk.setSchema(HostModel.self)
   }
 }

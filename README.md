@@ -17,7 +17,10 @@ Add plugin to `app.json`/`app.plugin.js`:
 {
   "expo": {
     "plugins": [
-      "@allboatsrise/expo-gigya"
+      "@allboatsrise/expo-gigya",
+      {
+        "gigyaSwiftSdkVersion": "1.5.0"
+      }
     ],
   }
 }
