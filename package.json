@@ -42,13 +42,13 @@
   "dependencies": {
   },
   "devDependencies": {
-    "expo": "^47.0.0",
-    "expo-module-scripts": "^3.0.4",
-    "@sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud": "^0.2.0"
+    "expo": "^48.0.0",
+    "expo-module-scripts": "^3.0.7",
+    "@sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud": "^0.2.2"
   },
   "peerDependencies": {
-    "expo": ">=47.0.0",
-    "@sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud": ">=0.2.0"
+    "expo": ">=48.0.0",
+    "@sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud": ">=0.2.2"
   },
   "peerDependenciesMeta": {
     "expo": {

@@ -22,8 +22,8 @@ export const withAppDelegateSetup: ConfigPlugin = (config) => {
         'GigyaExtension * gigya = [[GigyaExtension alloc] init];',
         '[gigya setMySchema];',
       ].join('\n'),
-      anchor: /\[super application:application didFinishLaunchingWithOptions:launchOptions\];/,
-      offset: 1,
+      anchor: /return \[super application:application didFinishLaunchingWithOptions:launchOptions\];/,
+      offset: 0,
       tag: '@allboatsrise/expo-gigya(didFinishLaunchingWithOptions)',
       comment: '//'
     }).contents
