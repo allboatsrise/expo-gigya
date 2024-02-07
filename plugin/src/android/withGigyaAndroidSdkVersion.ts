@@ -16,7 +16,7 @@ export const withGigyaAndroidSdkVersion: ConfigPlugin<Props> = (config, props) =
     if (props.version) {
       newContents = mergeContents({
         src: config.modResults.contents,
-        newSrc: `    implementation 'com.sap.gigya-android-sdk:sdk-core:${props.version}'`,
+        newSrc: `    implementation 'com.sap.oss.gigya-android-sdk:sdk-core:${props.version}'`,
         anchor: /dependencies\s?{/,
         offset: 1,
         tag: CONTENTS_TAG,
