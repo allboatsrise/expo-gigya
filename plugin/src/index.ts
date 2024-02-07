@@ -1,13 +1,15 @@
 import fs from 'fs';
 import path from 'path';
 import { ConfigPlugin, createRunOncePlugin } from '@expo/config-plugins';
-import { GigyaPluginProps } from './types';
+import { GigyaPluginProps, GigyaPluginPropsSchema } from './types';
 
 import { withMainApplicationSetup } from './android/withMainApplicationSetup';
 import { withAppDelegateSetup } from './ios/withAppDelegateSetup';
 import { withGigyaExtensionFile } from './ios/withGigyaExtensionFile';
 import { withGigyaSwiftSdkVersion } from './ios/withGigyaSwiftSdkVersion';
 import { withGigyaAndroidSdkVersion } from './android/withGigyaAndroidSdkVersion';
+
+const pkg = JSON.parse(fs.readFileSync(path.join(path.dirname(path.dirname(__dirname)), 'package.json'), 'utf8'));
 
 /**
  * Plugin based on integration instructions for @sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud package
@@ -16,18 +18,25 @@ import { withGigyaAndroidSdkVersion } from './android/withGigyaAndroidSdkVersion
  * @param props 
  * @returns 
  */
-const withGigya: ConfigPlugin<GigyaPluginProps | undefined> = (config, props) => {
+const withGigya: ConfigPlugin<GigyaPluginProps | unknown> = (config, unsafeProps) => {
+  const result = GigyaPluginPropsSchema.safeParse(unsafeProps)
+
+  if (!result.success) {
+    throw new Error(`${pkg.name}: ${result.error.toString()}`);
+  }
+
+  const props = result.data
+
   // android
   config = withMainApplicationSetup(config);
-  config = withGigyaAndroidSdkVersion(config, {version: props?.gigyaAndroidSdkVersion})
+  config = withGigyaAndroidSdkVersion(config, {version: props.gigyaAndroidSdkVersion})
 
   // ios
   config = withAppDelegateSetup(config);
   config = withGigyaExtensionFile(config, {file: path.join(path.dirname(__dirname), 'assets', 'GigyaExtension.swift')});
-  config = withGigyaSwiftSdkVersion(config, {version: props?.gigyaSwiftSdkVersion})
+  config = withGigyaSwiftSdkVersion(config, {version: props.gigyaSwiftSdkVersion})
   
   return config;
 };
 
-const pkg = JSON.parse(fs.readFileSync(path.join(path.dirname(path.dirname(__dirname)), 'package.json'), 'utf8'));
 export default createRunOncePlugin(withGigya, pkg.name, pkg.version);
