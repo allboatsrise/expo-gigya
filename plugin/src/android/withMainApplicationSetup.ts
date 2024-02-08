@@ -10,10 +10,10 @@ export const withMainApplicationSetup: ConfigPlugin = (config) => {
     config.modResults.contents = mergeContents({
       src: config.modResults.contents,
       newSrc: [
-        'import com.gigya.android.sdk.account.models.GigyaAccount;',
-        'import com.sap.gigya_rn_plugin.GigyaSdkModule;'
+        'import com.gigya.android.sdk.account.models.GigyaAccount',
+        'import com.sap.gigya_rn_plugin.GigyaSdkModule'
       ].join('\n'),
-      anchor: /public class MainApplication/,
+      anchor: /class MainApplication :/,
       offset: 0,
       tag: '@allboatsrise/expo-gigya(header)',
       comment: '//'
@@ -22,9 +22,9 @@ export const withMainApplicationSetup: ConfigPlugin = (config) => {
     config.modResults.contents = mergeContents({
       src: config.modResults.contents,
       newSrc: [
-        'GigyaSdkModule.setSchema(this, GigyaAccount.class);',
+        'GigyaSdkModule.setSchema(this, GigyaAccount::class.java)',
       ].join('\n'),
-      anchor: /super\.onCreate\(\);/,
+      anchor: /super\.onCreate\(\)/,
       offset: 1,
       tag: '@allboatsrise/expo-gigya(onCreate)',
       comment: '//'
