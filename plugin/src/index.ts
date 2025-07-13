@@ -8,6 +8,7 @@ import { withAppDelegateSetup } from './ios/withAppDelegateSetup';
 import { withGigyaExtensionFile } from './ios/withGigyaExtensionFile';
 import { withGigyaSwiftSdkVersion } from './ios/withGigyaSwiftSdkVersion';
 import { withGigyaAndroidSdkVersion } from './android/withGigyaAndroidSdkVersion';
+import { withProguardRules } from './android/withProguardRules';
 
 const pkg = JSON.parse(fs.readFileSync(path.join(path.dirname(path.dirname(__dirname)), 'package.json'), 'utf8'));
 
@@ -30,6 +31,7 @@ const withGigya: ConfigPlugin<GigyaPluginProps | unknown> = (config, unsafeProps
   // android
   config = withMainApplicationSetup(config);
   config = withGigyaAndroidSdkVersion(config, {version: props.gigyaAndroidSdkVersion})
+  config = withProguardRules(config)
 
   // ios
   config = withAppDelegateSetup(config);

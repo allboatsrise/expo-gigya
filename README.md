@@ -20,8 +20,8 @@ Add plugin to `app.json`/`app.plugin.js`:
       [
         "@allboatsrise/expo-gigya",
         {
-          "gigyaAndroidSdkVersion": "7.0.8",
-          "gigyaSwiftSdkVersion": "1.5.9"
+          "gigyaAndroidSdkVersion": "7.1.7",
+          "gigyaSwiftSdkVersion": "1.7.5"
         }
       ]
     ],

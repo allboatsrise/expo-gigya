@@ -4,7 +4,7 @@ import {
   ConfigPlugin,
   withDangerousMod,
 } from "@expo/config-plugins";
-import { mergeContents, removeContents } from "@expo/config-plugins/build/utils/generateCode";
+import { mergeContents } from "@expo/config-plugins/build/utils/generateCode";
 
 interface Props {
   version: string
