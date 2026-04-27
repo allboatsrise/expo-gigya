@@ -42,7 +42,7 @@
   "dependencies": {
   },
   "devDependencies": {
-    "@sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud": "0.4.0",
+    "@sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud": "0.6.3",
     "@types/react": "~19.1.1",
     "expo-module-scripts": "^55.0.2",
     "expo": "^55.0.16",
@@ -51,7 +51,7 @@
   },
   "peerDependencies": {
     "expo": ">=53.0.0",
-    "@sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud": ">=0.4.0",
+    "@sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud": ">=0.6.3",
     "zod": "^3.15.0"
   },
   "peerDependenciesMeta": {
