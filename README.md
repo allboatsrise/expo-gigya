@@ -8,7 +8,7 @@ Plugin based on integration instructions for [sap_oss/gigya-react-native-plugin-
 
 Install npm package:
 ```bash
-yarn add @allboatsrise/expo-gigya @sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud
+yarn add @allboatsrise/expo-gigya @sap_oss/gigya-react-native-plugin-for-sap-customer-data-cloud zod
 ```
 
 Add plugin to `app.json`/`app.plugin.js`:
