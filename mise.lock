@@ -37,22 +37,29 @@ version = "1.22.22"
 backend = "vfox:mise-plugins/vfox-yarn"
 
 [tools.yarn."platforms.linux-arm64"]
+checksum = "sha256:88268464199d1611fcf73ce9c0a6c4d44c7d5363682720d8506f6508addf36a0"
 url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
 
 [tools.yarn."platforms.linux-arm64-musl"]
+checksum = "sha256:88268464199d1611fcf73ce9c0a6c4d44c7d5363682720d8506f6508addf36a0"
 url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
 
 [tools.yarn."platforms.linux-x64"]
+checksum = "sha256:88268464199d1611fcf73ce9c0a6c4d44c7d5363682720d8506f6508addf36a0"
 url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
 
 [tools.yarn."platforms.linux-x64-musl"]
+checksum = "sha256:88268464199d1611fcf73ce9c0a6c4d44c7d5363682720d8506f6508addf36a0"
 url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
 
 [tools.yarn."platforms.macos-arm64"]
+checksum = "sha256:88268464199d1611fcf73ce9c0a6c4d44c7d5363682720d8506f6508addf36a0"
 url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
 
 [tools.yarn."platforms.macos-x64"]
+checksum = "sha256:88268464199d1611fcf73ce9c0a6c4d44c7d5363682720d8506f6508addf36a0"
 url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
 
 [tools.yarn."platforms.windows-x64"]
+checksum = "sha256:88268464199d1611fcf73ce9c0a6c4d44c7d5363682720d8506f6508addf36a0"
 url = "https://classic.yarnpkg.com/downloads/1.22.22/yarn-v1.22.22.tar.gz"
