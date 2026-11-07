@@ -1,6 +1,6 @@
 {
   "name": "@allboatsrise/expo-gigya",
-  "version": "55.0.0",
+  "version": "55.0.1",
   "description": "Expo module for SAP Customer Data Cloud",
   "homepage": "https://github.com/allboatsrise/expo-gigya",
   "license": "MIT",
@@ -15,6 +15,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/allboatsrise/expo-gigya.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "main": "build/index.js",
   "types": "build/index.d.ts",
